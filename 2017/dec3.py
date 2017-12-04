@@ -11,7 +11,7 @@
 inp = 312051
 
 
-def dec3(i):
+def part1(i):
     x = 1
     above = 0
     below = 0
@@ -40,7 +40,7 @@ def min_dist(points, v):
     return min([abs(v-p) for p in points])
 
 
-def part2(x):
+def part2(i):
     # https://oeis.org/A141481/b141481.txt
     pass
 
@@ -50,6 +50,6 @@ if __name__ == '__main__':
     testout = [0, 3, 2, 31]
     # tests
     for x, y in zip(testin, testout):
-        print(dec3(x) == y)
+        print(part1(x) == y)
     # testing on input
-    print(dec3(inp))
+    print(part1(inp))
