@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-
 inp = """3751    3769    2769    2039    2794    240 3579    1228    4291    220 324 3960    211 1346    237 1586
 550 589 538 110 167 567 99  203 524 288 500 111 118 185 505 74
 2127    1904    199 221 1201    250 1119    377 1633    1801    2011    1794    394 238 206 680
@@ -19,9 +17,9 @@ inp = """3751    3769    2769    2039    2794    240 3579    1228    4291    220
 166 136 80  185 135 78  177 123 82  150 121 145 115 63  68  24
 214 221 265 766 959 1038    226 1188    1122    117 458 1105    1285    1017    274 281"""
 
-def dec2():
+
+def part1():
     z = [x.split() for x in inp.split("\n")]
-    # print(z)
     return sum(chcksm(l) for l in z)
 
 
@@ -38,7 +36,7 @@ def chcksm(y):
     return mx - mn
 
 
-def part2(y):
+def p2(y):
     y = [int(z) for z in y]
     s = 0
     for i, x in enumerate(y):
@@ -50,11 +48,11 @@ def part2(y):
     return s
 
 
-def p2():
+def part2():
     z = [x.split() for x in inp.split("\n")]
-    return sum(part2(l) for l in z)
+    return sum(p2(l) for l in z)
 
 
 if __name__ == '__main__':
-    print(dec2())
-    print(p2())
+    print(part1())
+    print(part2())

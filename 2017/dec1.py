@@ -3,7 +3,7 @@
 import sys
 
 
-def cap(x):
+def part1(x):
     s = 0
     n = len(x)/2
     for i in range(len(x)-1):
@@ -14,4 +14,4 @@ def cap(x):
 
 
 if __name__ == '__main__':
-    cap(sys.argv[1])
+    part1(sys.argv[1])
