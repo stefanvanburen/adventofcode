@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+# black = "*"
+pytest = "*"
+ipython = "*"
+# mypy = "*"
+# pyre-check = "*"
+"flake8" = "*"
+pylint = "*"
+pytest-cov = "*"
+isort = "*"
+better-exceptions = "*"
+pytest-sugar = "*"
+
+[requires]
+python_version = "3.7"
+# for black
+# [pipenv]
+# allow_prereleases = true
