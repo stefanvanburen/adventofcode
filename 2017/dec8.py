@@ -15,7 +15,7 @@ def parse_line(line):
     val = int(tokens[2])
     cond = tokens[4:]
     if eval_cond(cond):
-        if op == 'inc':
+        if op == "inc":
             registers[reg] += val
         else:
             registers[reg] -= val
@@ -26,12 +26,12 @@ def eval_cond(cond):
         registers[cond[0]] = 0
     # this is used as part of the eval
     v = registers[cond[0]]
-    cond[0] = 'v'
-    return eval(''.join(cond))
+    cond[0] = "v"
+    return eval("".join(cond))
 
 
 def part1():
-    with open('./dec8.txt') as f:
+    with open("./dec8.txt") as f:
         for line in f:
             parse_line(line)
         reg = max(registers, key=registers.get)
@@ -39,7 +39,7 @@ def part1():
 
 
 def part2():
-    with open('./dec8.txt') as f:
+    with open("./dec8.txt") as f:
         m = 0
         for line in f:
             parse_line(line)
@@ -50,6 +50,6 @@ def part2():
         return m
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part1() == PART1SOL)
     print(part2() == PART2SOL)

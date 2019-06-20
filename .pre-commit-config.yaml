@@ -1,0 +1,61 @@
+repos:
+- repo: https://github.com/asottile/seed-isort-config
+  rev: v1.9.1
+  hooks:
+  - id: seed-isort-config
+
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: v4.3.20
+  hooks:
+  - id: isort
+
+- repo: https://github.com/asottile/pyupgrade
+  rev: v1.18.0
+  hooks:
+  - id: pyupgrade
+
+- repo: https://github.com/pre-commit/pygrep-hooks
+  rev: v1.4.0  # Use the ref you want to point at
+  hooks:
+  - id: python-use-type-annotations
+  - id: python-check-mock-methods
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.2.3
+  hooks:
+  # ensure we aren't committing merge conflict strings
+  - id: check-merge-conflict
+  # remove trailing whitespace
+  - id: trailing-whitespace
+  # validate json files
+  - id: check-json
+  # disallow committing to master
+  - id: no-commit-to-branch
+  # files in test/ end in _test.py
+  # we actually don't do this - we usually prefix with test_
+  # - id: name-tests-test
+  # fix line endings
+  - id: mixed-line-ending
+  # make sure files end in a single newline
+  - id: end-of-file-fixer
+  # breakpoint(), etc.
+  - id: debug-statements
+
+# note that this uses the options defined in pyproject.toml
+- repo: https://github.com/ambv/black
+  rev: 19.3b0
+  hooks:
+  - id: black
+
+- repo: local
+  hooks:
+  # this isn't working due to universal-ctags not installing on 10.14
+  - id: tags
+    name: tags
+    description: "re-runs universal-ctags"
+    entry: make tags
+    files: ''
+    pass_filenames: false
+    language: system
+    always_run: true
+    types: [python]

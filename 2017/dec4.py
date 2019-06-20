@@ -38,8 +38,8 @@ def sorted_check(z):
     return True
 
 
-if __name__ == '__main__':
-    with open('./dec4.txt', 'r') as f:
+if __name__ == "__main__":
+    with open("./dec4.txt", "r") as f:
         print(part1(f))
         f.seek(0)
         print(part2(f))

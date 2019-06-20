@@ -23,21 +23,21 @@ def part1(i):
             break
         x += 2
 
-    size = (x-1) / 2
+    size = (x - 1) / 2
 
     # Base case
     if size == 1:
         return 0
 
-    length = above-below
+    length = above - below
     points = [1, 3, 5, 7]
-    candidates = [((length//8) * p)+below for p in points]
+    candidates = [((length // 8) * p) + below for p in points]
     md = min_dist(candidates, i)
     return size + md
 
 
 def min_dist(points, v):
-    return min([abs(v-p) for p in points])
+    return min([abs(v - p) for p in points])
 
 
 def part2(i):
@@ -45,7 +45,7 @@ def part2(i):
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     testin = [1, 12, 23, 1024]
     testout = [0, 3, 2, 31]
     # tests
