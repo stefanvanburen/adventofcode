@@ -31,7 +31,7 @@ def parse_group(group, level):
             elif v == '<':
                 in_garbage = True
             elif v == '{':
-                o, i = parse_group(group[idx:], level+1)
+                o, i = parse_group(group[idx:], level + 1)
                 # print("Group value: %s" % o)
                 # print("Indexes forward: %s" % i)
                 value += o
@@ -67,15 +67,15 @@ def count_garbage(inp):
 
 def part1_tests():
     tests = {
-            '{}': 1,
-            '{{{}}}': 6,
-            '{{},{}}': 5,
-            '{{{},{},{{}}}}': 16,
-            '{<a>,<a>,<a>,<a>}': 1,
-            '{{<ab>},{<ab>},{<ab>},{<ab>}}': 9,
-            '{{<!!>},{<!!>},{<!!>},{<!!>}}': 9,
-            '{{<a!>},{<a!>},{<a!>},{<ab>}}': 3,
-            }
+        '{}': 1,
+        '{{{}}}': 6,
+        '{{},{}}': 5,
+        '{{{},{},{{}}}}': 16,
+        '{<a>,<a>,<a>,<a>}': 1,
+        '{{<ab>},{<ab>},{<ab>},{<ab>}}': 9,
+        '{{<!!>},{<!!>},{<!!>},{<!!>}}': 9,
+        '{{<a!>},{<a!>},{<a!>},{<ab>}}': 3,
+    }
     for t in tests:
         print(t)
         out = parse_group_root(t)
@@ -99,14 +99,14 @@ def part2():
 
 def part2_tests():
     tests = {
-            '<>': 0,
-            '<random characters>': 17,
-            '<<<<>': 3,
-            '<{!>}>': 2,
-            '<!!>': 0,
-            '<!!!>>': 0,
-            '<{o"i!a,<{i<a>': 10,
-            }
+        '<>': 0,
+        '<random characters>': 17,
+        '<<<<>': 3,
+        '<{!>}>': 2,
+        '<!!>': 0,
+        '<!!!>>': 0,
+        '<{o"i!a,<{i<a>': 10,
+    }
     for t in tests:
         print(t)
         out = count_garbage(t)

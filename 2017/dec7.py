@@ -40,8 +40,8 @@ def weight(lines, root):
         for y in weights:
             for x in weights:
                 if x != y:
-                    print weights
-                    print get_branch(lines, a[0])
+                    print(weights)
+                    print(get_branch(lines, a[0]))
 
     return w
 
