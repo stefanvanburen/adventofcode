@@ -5,13 +5,13 @@ PART2SOL = 521
 
 def get_score(line):
     sp = line.split(" ")[1].strip()
-    s = int(sp.strip('()'))
+    s = int(sp.strip("()"))
     return s
 
 
 def get_leaves(line):
     sp = line.split(" ")
-    m = [f.strip().strip(',') for f in sp]
+    m = [f.strip().strip(",") for f in sp]
     if len(m) > 3:
         # print(m[3:])
         return [x for x in m[3:]]
@@ -46,8 +46,8 @@ def weight(lines, root):
     return w
 
 
-if __name__ == '__main__':
-    with open('./dec7.txt') as f:
+if __name__ == "__main__":
+    with open("./dec7.txt") as f:
         lines = [l for l in f]
         s = set()
         for x in lines:

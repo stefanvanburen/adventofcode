@@ -45,7 +45,7 @@ def part2(i):
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     testin = [1, 12, 23, 1024]
     testout = [0, 3, 2, 31]
     # tests

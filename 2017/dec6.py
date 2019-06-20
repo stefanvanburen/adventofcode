@@ -54,8 +54,8 @@ def max_index(z):
     return idx
 
 
-if __name__ == '__main__':
-    with open('./dec6.txt') as f:
+if __name__ == "__main__":
+    with open("./dec6.txt") as f:
         print(part1([0, 2, 7, 0]) == 5)
         print(part2([0, 2, 7, 0]) == 4)
         z = f.readline()

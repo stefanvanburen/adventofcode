@@ -4,7 +4,6 @@ Solution to https://adventofcode.com/2018/day/1
 from collections import Counter
 from pathlib import Path
 
-
 # from the root of the project
 INPUT_FILE = Path.cwd() / "2018" / "dec1.txt"
 

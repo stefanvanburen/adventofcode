@@ -55,6 +55,6 @@ def part2():
     return sum(p2(l) for l in z)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part1())
     print(part2())

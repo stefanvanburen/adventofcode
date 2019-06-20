@@ -13,5 +13,5 @@ def part1(x):
     print(s)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     part1(sys.argv[1])

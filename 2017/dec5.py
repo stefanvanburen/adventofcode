@@ -38,7 +38,7 @@ def part2(x):
 
 
 if __name__ == "__main__":
-    with open('./dec5.txt', 'r') as f:
+    with open("./dec5.txt", "r") as f:
         test1 = [0, 3, 0, 1, -3]
         test2 = test1[:]
         print(part1(test1) == 5)
