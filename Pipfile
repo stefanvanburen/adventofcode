@@ -4,115 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-# status bars
-# tqdm = "*"
-
-# environment variables
-# environs = "*"
-
-# HTTP requests
-# requests = "*"
 
 [dev-packages]
 # for code formatting
 black = {extras = ["d"],version = "*"}
 isort = {extras = ["pipfile"],version = "*"}
 
-# removes unused imports / variables
-autoflake = "*"
-
-# for testing requests
-# responses = "*"
-# pook = "*"
-
-# to upload to codecov
-# codecov = "*"
-
-# for testing aws
-# moto = "*"
-
-# for freezing datetimes
-# freezegun = "*"
-
 # pytest and assorted packages
 pytest = "*"
-# coverage
-pytest-cov = "*"
-# mock
-mock = "*"
-# mocker
-pytest-mock = "*"
-# distribute tests
-pytest-xdist = "*"
-# better output
-pytest-sugar = "*"
-# times out tests after a certain period
-pytest-timeout = "*"
-# watching tests and re-running
-# maybe just replace with `entr`?
-pytest-watch = "*"
-# can disable sockets
-pytest-socket = "*"
-pytest-pudb = "*"
-# overrides default debugger, used during `breakpoint()`
-pudb = "*"
-
-# used with konch
-ipython = "*"
-ptpython = "*"
-# konch
-konch = "*"
-
-# used for type annotations
-pyannotate = "*"
-
-# linters
-# see .flake8
-"flake8" = "*"
-flake8-bugbear = "*"
-
-# wraps a bunch of linters
-# https://github.com/klen/pylama
-pylama = "*"
-
-# removes commented out code, which isn't terribly useful
-# eradicate = "*"
-
-# superseded by `black`
-# autopep8 = "*"
-
-# NOTE: these are somewhat mutually exclusive; I prefer tbvaccine but install
-# both, and control them via the env vars in .envrc
-# better printed exceptions
-better-exceptions = "*"
-# better tracebacks
-tbvaccine = "*"
-
-# upgrades old language constructs to new ones; used in pre-commit
-pyupgrade = "*"
-
-# neovim = "*"
-# This is superseded by
-pynvim = "*"
-
-# type checking
-mypy = "*"
-
-# lookup modules
-ped = "*"
-
-# print debugging
-icecream = "*"
-# debugging
-pysnooper = "*"
-
-# still debating about this - plus pyls-black, pyls-flake8, etc
-# python-language-server = "*"
-
-# Enable this if you're using protocol buffers
-# mypy-protobuf = "*"
-# NOTE: This isn't quite as good as mypy and seems to have issues with dependencies
-# pyre-check = "*"
 
 [requires]
 python_version = "3.7"
