@@ -8,11 +8,7 @@ INPUT_FILE = Path.cwd() / "2018" / "dec4.txt"
 
 
 def part1() -> int:
-    sorted_lines = sorted(
-        line
-        for line in INPUT_FILE.read_text().split("\n")
-        if line
-    )
+    sorted_lines = sorted(line for line in INPUT_FILE.read_text().split("\n") if line)
 
 
 if __name__ == "__main__":
