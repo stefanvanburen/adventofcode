@@ -27,5 +27,6 @@ def part2() -> int:
 
     return 0
 
+
 print(part1())
 print(part2())
