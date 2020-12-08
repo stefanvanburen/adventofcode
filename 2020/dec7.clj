@@ -19,36 +19,36 @@
 
           {container data}))))
 
-(def extracted-rules (map extract-rule rules))
+(def extracted-rules (into {} (map extract-rule rules)))
 
 (defn can-contain? [color rule]
-  (let [contained-colors (set (map :color (val (first rule))))]
+  (let [contained-colors (set (map :color (val rule)))]
     (when (contains? contained-colors color)
-      (key (first rule)))))
+      (key rule))))
 
 (defn part1
-  [holders]
-  (let [possible-holders
-        (map
-          (fn [holder]
-            (filter
-              #(not (nil? %))
-              (map #(can-contain? holder %) extracted-rules)))
-          holders)
-        new-values (set (flatten possible-holders))]
-    ;; if we're finally adding no new values, we're done
-    (if (set/subset? new-values holders)
-      holders
-      (part1 (set/union new-values holders)))))
+  ([] (part1 #{"shiny gold"}))
+  ([holders]
+   (let [possible-holders
+         (map
+           (fn [holder]
+             (filter
+               #(not (nil? %))
+               (map #(can-contain? holder %) extracted-rules)))
+           holders)
+         new-values (set (flatten possible-holders))]
+     (if (set/subset? new-values holders)
+       ;; if we're finally adding no new values, we're done
+       ;; count the reached colors, minus the initial "shiny gold"
+       (count (disj holders "shiny gold"))
+       (part1 (set/union new-values holders))))))
 
-(count (disj (part1 #{"shiny gold"}) "shiny gold"))
-
-(def merged-rules (into {} extracted-rules))
+(= (part1) 155)
 
 (defn part2
   ([] (part2 "shiny gold" 1))
   ([color multiplier]
-   (let [rules (get merged-rules color)
+   (let [rules (get extracted-rules color)
          ;; recurse
          counts (apply + (map #(part2 (:color %) (* multiplier (:count %))) rules))
          ;; current counts
@@ -56,4 +56,4 @@
      (apply + counts current))))
 
 
-(part2)
+(= (part2) 54803)
