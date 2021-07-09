@@ -1,1 +1,3 @@
 * text=auto
+# do not try to merge the Pipfile.lock file - instead; it should just be regenerated
+Pipfile.lock -diff
