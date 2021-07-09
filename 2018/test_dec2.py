@@ -1,4 +1,5 @@
-from dec2 import part1, part2
+from dec2 import part1
+from dec2 import part2
 
 
 def test_dec2_part1():

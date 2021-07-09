@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 # http://adventofcode.com/2017/day/3
 #
 # Attempts:
