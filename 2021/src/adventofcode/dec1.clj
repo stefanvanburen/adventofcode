@@ -1,7 +1,9 @@
-(ns dec1
-  (:require [clojure.string :refer [split-lines]]))
+(ns adventofcode.dec1
+  (:require
+    [clojure.string :refer [split-lines]]
+    [clojure.java.io :as io]))
 
-(def input (map #(Integer/parseInt %) (split-lines (slurp "./dec1.txt"))))
+(def input (map #(Integer/parseInt %) (split-lines (slurp (io/resource "dec1.txt")))))
 
 (defn part1 []
   (->> (partition 2 1 input) ;; take 2 at a time
